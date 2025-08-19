@@ -1,7 +1,7 @@
 // Controlador de noticias: maneja validación y llamadas al servicio Supabase
 import { Request, Response, NextFunction } from 'express';
-import { NoticiaCreateSchema, NoticiaUpdateSchema, mapNoticiaToDb, mapDbToNoticia } from '../domain/noticia';
-import * as supa from '../services/supabaseService';
+import { NoticiaCreateSchema, NoticiaUpdateSchema, mapNoticiaToDb, mapDbToNoticia } from '../domain/noticia.js';
+import * as supa from '../services/supabaseService.js';
 
 // Nombre de la tabla en Supabase
 const TABLE = 'noticias';

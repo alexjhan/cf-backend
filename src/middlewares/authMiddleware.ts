@@ -1,6 +1,6 @@
 // Middleware de autenticación simple por token compartido
 import { Request, Response, NextFunction } from 'express';
-import { ENV } from '../config/env';
+import { ENV } from '../config/env.js';
 
 export function authMiddleware(req: Request, res: Response, next: NextFunction) {
   // Lee token de header personalizado o Bearer

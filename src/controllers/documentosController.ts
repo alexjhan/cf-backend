@@ -1,7 +1,7 @@
 // Controlador de documentos
 import { Request, Response, NextFunction } from 'express';
-import { DocumentoCreateSchema, DocumentoUpdateSchema } from '../domain/documento';
-import * as supa from '../services/supabaseService';
+import { DocumentoCreateSchema, DocumentoUpdateSchema } from '../domain/documento.js';
+import * as supa from '../services/supabaseService.js';
 
 // Tabla documentos en Supabase
 const TABLE = 'documentos';

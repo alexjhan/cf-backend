@@ -1,7 +1,7 @@
 // Controlador de oportunidades
 import { Request, Response, NextFunction } from 'express';
-import { OportunidadCreateSchema, OportunidadUpdateSchema, mapOportunidadToDb, mapDbToOportunidad } from '../domain/oportunidad';
-import * as supa from '../services/supabaseService';
+import { OportunidadCreateSchema, OportunidadUpdateSchema, mapOportunidadToDb, mapDbToOportunidad } from '../domain/oportunidad.js';
+import * as supa from '../services/supabaseService.js';
 
 // Tabla en Supabase
 const TABLE = 'oportunidades';
