@@ -2,9 +2,9 @@
 import express from 'express';
 import cors from 'cors';
 import { router as apiRouter } from '../routes/index.js';
-import { errorMiddleware } from '../middlewares/errorMiddleware';
-import { notFound } from '../middlewares/notFound';
-import { requestLogger } from '../middlewares/requestLogger';
+import { errorMiddleware } from '../middlewares/errorMiddleware.js';
+import { notFound } from '../middlewares/notFound.js';
+import { requestLogger } from '../middlewares/requestLogger.js';
 
 // Fabrica y devuelve instancia de Express configurada
 export function buildServer() {
