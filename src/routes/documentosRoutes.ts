@@ -1,7 +1,7 @@
 // Rutas para documentos
 import { Router } from 'express';
-import * as controller from '../controllers/documentosController';
-import { authMiddleware } from '../middlewares/authMiddleware';
+import * as controller from '../controllers/documentosController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
 // Instancia
 const r = Router();

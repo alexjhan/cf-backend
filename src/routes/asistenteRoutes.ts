@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as controller from '../controllers/asistenteController';
+import * as controller from '../controllers/asistenteController.js';
 
 const r = Router();
 

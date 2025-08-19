@@ -1,7 +1,7 @@
 // Definición de rutas para noticias
 import { Router } from 'express';
-import * as controller from '../controllers/noticiasController';
-import { authMiddleware } from '../middlewares/authMiddleware';
+import * as controller from '../controllers/noticiasController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
 // Crea router específico
 const r = Router();

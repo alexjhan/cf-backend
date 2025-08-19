@@ -1,7 +1,7 @@
 // Rutas para oportunidades
 import { Router } from 'express';
-import * as controller from '../controllers/oportunidadesController';
-import { authMiddleware } from '../middlewares/authMiddleware';
+import * as controller from '../controllers/oportunidadesController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
 // Instancia del router
 const r = Router();
