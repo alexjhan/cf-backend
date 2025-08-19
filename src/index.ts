@@ -1,6 +1,6 @@
 // Punto de entrada: crea servidor y lo inicia
-import { buildServer } from './config/server';
-import { ENV } from './config/env';
+import { buildServer } from './config/server.js';
+import { ENV } from './config/env.js';
 
 // Construye instancia Express configurada
 const app = buildServer();
