@@ -1,7 +1,7 @@
 // Configuración del servidor Express (creación y middlewares globales)
 import express from 'express';
 import cors from 'cors';
-import { router as apiRouter } from '../routes';
+import { router as apiRouter } from '../routes/index.js';
 import { errorMiddleware } from '../middlewares/errorMiddleware';
 import { notFound } from '../middlewares/notFound';
 import { requestLogger } from '../middlewares/requestLogger';
