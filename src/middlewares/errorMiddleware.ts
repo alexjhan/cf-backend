@@ -2,6 +2,8 @@
 import { Request, Response, NextFunction } from 'express';
 
 export function errorMiddleware(err: any, _req: Request, res: Response, _next: NextFunction) {
+  // Imprime el error completo en consola para debug en cloud
+  console.error(err);
   // Evita doble envío si headers ya salieron
   if (res.headersSent) return;
   // Determina código de estado
