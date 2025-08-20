@@ -62,13 +62,14 @@ create index if not exists idx_oportunidades_created_at on public.oportunidades 
 -- create index if not exists idx_oportunidades_requisitos on public.oportunidades using gin (requisitos);
 
 -- Table: documentos
+
 create table if not exists public.documentos (
   id uuid primary key default uuid_generate_v4(),
   titulo text not null,
   subtitulo text,
   tipo text not null,
+  categorias text[] not null default '{}',
   fecha date not null,
-  peso text not null,
   link text not null,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()

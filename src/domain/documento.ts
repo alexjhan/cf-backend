@@ -15,12 +15,9 @@ export const DocumentoCreateSchema = z.object({
   titulo: z.string().min(3),                 // Título principal
   subtitulo: z.string().min(3).optional(),   // Subtítulo (opcional)
   tipo: TipoDocumentoEnum,                  // Tipo controlado
+  categorias: z.array(z.string().min(1)).min(1), // Múltiples categorías
   fecha: z.string()                          // Fecha (YYYY-MM-DD)
     .regex(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/,'Formato fecha esperado YYYY-MM-DD'),
-  peso: z.union([                            // Tamaño del archivo mostrado al usuario
-    z.string().min(1),                       // Ej: "1.2 MB"
-    z.number().int().positive()              // O bytes numéricos
-  ]),
   link: z.string().url()                     // URL externa (Drive u otra)
 });
 
