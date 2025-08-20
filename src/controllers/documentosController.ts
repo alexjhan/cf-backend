@@ -16,7 +16,12 @@ export async function obtener(req: Request, res: Response, next: NextFunction) {
 }
 // POST crear documento
 export async function crear(req: Request, res: Response, next: NextFunction) {
-	try { const parsed = DocumentoCreateSchema.parse(req.body); const created = await supa.insertOne(TABLE, parsed); res.status(201).json(created); } catch (e) { next(e); }
+	console.log('BODY RECIBIDO:', req.body);
+	try {
+		const parsed = DocumentoCreateSchema.parse(req.body);
+		const created = await supa.insertOne(TABLE, parsed);
+		res.status(201).json(created);
+	} catch (e) { next(e); }
 }
 // PUT actualizar documento
 export async function actualizar(req: Request, res: Response, next: NextFunction) {
