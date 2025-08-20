@@ -15,8 +15,8 @@ export function buildServer() {
     origin: 'https://centro-federado.netlify.app',
     credentials: true
   }));
-  // Parser JSON
-  app.use(express.json());
+  // Parser JSON (aumenta el límite a 10MB para imágenes grandes)
+  app.use(express.json({ limit: '10mb' }));
   // Logger sencillo de cada request
   app.use(requestLogger);
   // Monta rutas de la API
