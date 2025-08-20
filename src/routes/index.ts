@@ -10,4 +10,9 @@ import adminRoutes from './adminRoutes.js';
 export const router = Router();
 // Monta subrutas por recurso
 
+
+router.use('/noticias', noticiasRoutes);
+router.use('/oportunidades', oportunidadesRoutes);
+router.use('/documentos', documentosRoutes);
+router.use('/asistente', asistenteRoutes);
 router.use('/admin', adminRoutes);
