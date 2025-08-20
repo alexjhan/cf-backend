@@ -47,6 +47,8 @@ create table if not exists public.oportunidades (
   tipo_estudio text,
   contenido text,
   fecha date,
+  email text,
+  telefono text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );

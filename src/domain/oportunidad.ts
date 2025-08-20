@@ -21,7 +21,9 @@ export const OportunidadCreateSchema = z.object({
   duracion: z.string().optional().nullable(),
   tipoEstudio: z.string().optional().nullable(),
   contenido: z.string().optional().nullable(),
-  fecha: z.string().regex(DATE_REGEX,'Formato fecha YYYY-MM-DD').optional().nullable()
+  fecha: z.string().regex(DATE_REGEX,'Formato fecha YYYY-MM-DD').optional().nullable(),
+  email: z.string().email().optional().nullable(),
+  telefono: z.string().optional().nullable(),
 });
 
 export const OportunidadUpdateSchema = OportunidadCreateSchema.partial();
@@ -38,18 +40,20 @@ export function mapOportunidadToDb(o: Partial<OportunidadCreate|OportunidadUpdat
   return {
     categoria: o.categoria,
     titulo: o.titulo,
-    fecha_publicacion: o.fechaPublicacion || o.fecha,
-    requisitos: o.requisitos,
-    beneficios: o.beneficios,
-    activa: o.activa,
-    empresa: o.empresa,
-    texto: o.texto,
-    contacto: o.contacto,
-    institucion: o.institucion,
-    duracion: o.duracion,
-    tipo_estudio: o.tipoEstudio,
-    contenido: o.contenido,
-    fecha: o.fecha || o.fechaPublicacion
+  fecha_publicacion: o.fechaPublicacion || o.fecha,
+  requisitos: o.requisitos,
+  beneficios: o.beneficios,
+  activa: o.activa,
+  empresa: o.empresa,
+  texto: o.texto,
+  contacto: o.contacto,
+  institucion: o.institucion,
+  duracion: o.duracion,
+  tipo_estudio: o.tipoEstudio,
+  contenido: o.contenido,
+  fecha: o.fecha || o.fechaPublicacion,
+  email: o.email,
+  telefono: o.telefono
   };
 }
 
@@ -70,6 +74,8 @@ export function mapDbToOportunidad(row: any): Oportunidad {
     tipoEstudio: row.tipo_estudio || row.tipoEstudio || null,
     contenido: row.contenido || null,
     fecha: row.fecha || null,
+    email: row.email || null,
+    telefono: row.telefono || null,
     created_at: row.created_at,
     updated_at: row.updated_at
   } as Oportunidad;
